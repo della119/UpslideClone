@@ -1,8 +1,9 @@
 # UpslideClone — User Acceptance Test (UAT) Plan
 
-_Manual acceptance for W1–W5, mapped to the functional requirements in
-`UPSLIDE_CLONE_Windows_Requirements.md`. Tick each result; log issues with the
-message from the on-screen box and `%APPDATA%\UpslideClone\logs`._
+> Step-by-step manual acceptance tests — open each app, run each feature, tick the result.
+
+_Covers W1–W5 across Excel, PowerPoint and Word, plus the PowerPoint design suite. Tick each
+result; log issues with the message from the on-screen box and `%APPDATA%\UpslideClone\logs`._
 
 ## 0. Prerequisites (one time)
 
