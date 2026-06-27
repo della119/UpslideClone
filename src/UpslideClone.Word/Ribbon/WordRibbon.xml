@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="OnRibbonLoad">
+  <ribbon>
+    <tabs>
+      <tab id="UpslideTabWord" label="Upslide">
+        <group id="grpLinksWord" label="Links">
+          <button id="btnLinkManagerW" label="Link Manager" size="large"
+                  imageMso="DatabaseLinkTablesManageRelationships" onAction="OnToggleLinkManager"
+                  supertip="Show/hide the Link Manager: every linked object, its Excel source, and status." />
+          <button id="btnRefreshAllW" label="Refresh All" size="large"
+                  imageMso="RefreshAll" onAction="OnRefreshAll"
+                  supertip="Re-render every linked object in this document from its Excel source." />
+        </group>
+        <group id="grpFormatW" label="Formatting">
+          <button id="btnFormatTableW" label="Format Table" size="large"
+                  imageMso="TableStylesGallery" onAction="OnFormatTable"
+                  supertip="Brand the table the cursor is in: green header, fonts, borders." />
+          <button id="btnBrandFontW" label="Brand Font" onAction="OnBrandFont"
+                  supertip="Apply the brand font to the selected text." />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
