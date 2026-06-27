@@ -1,5 +1,8 @@
 # UpslideClone — Test Results (W1–W5 + PowerPoint design suite + Word)
 
+> The build matrix and test results — 99 Core unit tests plus headless add-in checks
+> across W1–W5, the PowerPoint design suite, and Word.
+
 _Generated: 2026-06-17 · latest update: 2026-06-24 · Configuration: Debug · .NET Framework 4.8.1 · Office x64_
 
 ## 1. Build matrix
