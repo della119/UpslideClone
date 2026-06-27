@@ -69,7 +69,7 @@ foreach ($a in $addins) {
 $un = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\UpslideClone"
 New-Item $un -Force | Out-Null
 New-ItemProperty $un -Name DisplayName -Value "UpslideClone (Excel / PowerPoint / Word add-in)" -PropertyType String -Force | Out-Null
-New-ItemProperty $un -Name DisplayVersion -Value "1.0.0" -PropertyType String -Force | Out-Null
+New-ItemProperty $un -Name DisplayVersion -Value "1.0.1" -PropertyType String -Force | Out-Null
 New-ItemProperty $un -Name Publisher -Value "In-house" -PropertyType String -Force | Out-Null
 New-ItemProperty $un -Name InstallLocation -Value $installBase -PropertyType String -Force | Out-Null
 
@@ -86,8 +86,9 @@ foreach ($a in $addins) {
     $before = Count-Started $a.App
     Start-Process $a.Exe
     $loaded = $false
-    # Word in particular can cold-start slowly; wait up to ~45s
-    for ($i=0; $i -lt 45; $i++) { Start-Sleep -Seconds 1; if ((Count-Started $a.App) -gt $before) { $loaded = $true; break } }
+    # Word cold-starts slowly on some machines; give it longer before giving up
+    $maxWait = if ($a.App -eq 'Word') { 75 } else { 50 }
+    for ($i=0; $i -lt $maxWait; $i++) { Start-Sleep -Seconds 1; if ((Count-Started $a.App) -gt $before) { $loaded = $true; break } }
     try { $app=[Runtime.InteropServices.Marshal]::GetActiveObject($a.Prog); $app.DisplayAlerts=$false } catch {}
     try { $app.Quit() } catch {}
     Start-Sleep -Seconds 2

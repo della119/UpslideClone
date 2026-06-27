@@ -11,7 +11,7 @@
     powershell -ExecutionPolicy Bypass -File installer\Make-Release.ps1 -SkipBuild # use existing bin\Release
 #>
 param(
-    [string]$Version = "1.0.0",
+    [string]$Version = "1.0.1",
     [switch]$SkipBuild
 )
 $ErrorActionPreference = "Stop"
@@ -117,10 +117,14 @@ IF THE TAB EVER DISAPPEARS
 UNINSTALL
   Double-click  Uninstall.cmd  (or remove "UpslideClone" from Settings > Apps).
 
-CERTIFICATE NOTE
-  The add-ins are signed with a self-signed certificate (UpslideClone.cer). The
-  installer adds it to your CurrentUser Trusted Publishers so Office will load the
-  add-ins. This is in-house tooling; trust it only if you trust the source.
+CERTIFICATE NOTE (please read)
+  The add-ins are signed with a SELF-SIGNED certificate (UpslideClone.cer, public
+  key only). Install.cmd adds it to your CurrentUser Trusted Publishers and Root
+  stores so Office will load the add-ins without a prompt - this is unavoidable for
+  self-signed VSTO add-ins (Windows won't trust them otherwise). It is fine for
+  INTERNAL / known-source use; only install if you trust the source. For wide public
+  distribution, the add-ins should instead be signed with a CA-issued code-signing
+  certificate, so no manual trust step is needed and the publisher is verifiable.
 
 SOURCE
   https://github.com/della119/UpslideClone
