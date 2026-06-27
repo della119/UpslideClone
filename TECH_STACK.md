@@ -1,7 +1,8 @@
 # UpslideClone — Technology Stack & Architecture (技术栈)
 
-How the whole add-in suite is built — languages, frameworks, structure, tooling,
-and the key design decisions.
+> How the whole add-in suite is built — languages, frameworks, project structure, tooling,
+> and the key design decisions: the UI-free Core engine vs. thin VSTO shells, the
+> Excel↔PowerPoint↔Word link engine, and the Office interop gotchas.
 
 ## 1. Platform & languages
 
