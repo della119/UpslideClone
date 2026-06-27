@@ -1,6 +1,9 @@
 # UpslideClone — Build Status
 
-_Last updated: 2026-06-17 (Phase W0 scaffold + W1 logic port — Core verified)_
+> Phase-by-phase build log — from the W0 scaffold through the W3 linking engine, the
+> PowerPoint design suite, and the Word add-in, to the **v1.0 pre-built release**.
+
+_Last updated: 2026-06-27._
 
 ## ✅ Verified on this machine (light tier)
 - **.NET 4.8.1 targeting pack + .NET SDK 8.0.422** installed.
