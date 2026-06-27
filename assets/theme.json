@@ -1,0 +1,18 @@
+{
+  "fonts": { "latin": "Calibri", "cjk": "华文细黑", "sizeBody": 10, "sizeHeader": 10 },
+  "colors": {
+    "headerFill": "#A9D18E",
+    "headerFont": "#FFFFFF",
+    "resultFill": "#EFEFEF",
+    "border": "#BFBFBF",
+    "increase": "#86BC25",
+    "decrease": "#E0301E",
+    "total": "#375623"
+  },
+  "numberFormats": {
+    "number": "#,##0.0;(#,##0.0)",
+    "percent": "0.0%;(0.0%)",
+    "currency": "¥#,##0.0;(¥#,##0.0)"
+  },
+  "resultRowKeywords": ["EBITDA", "EBIT", "Gross Margin", "Net Income", "Total", "毛利", "净利润", "营业利润"]
+}

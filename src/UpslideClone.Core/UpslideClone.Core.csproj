@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1111111-1111-1111-1111-111111111111}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UpslideClone.Core</RootNamespace>
+    <AssemblyName>UpslideClone.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Branding\BrandTheme.cs" />
+    <Compile Include="Design\AlignEngine.cs" />
+    <Compile Include="Design\CrossReference.cs" />
+    <Compile Include="Design\SlideCheckRules.cs" />
+    <Compile Include="Design\TableOfContents.cs" />
+    <Compile Include="Charts\CagrEngine.cs" />
+    <Compile Include="Charts\StackedWaterfallEngine.cs" />
+    <Compile Include="Charts\WaterfallEngine.cs" />
+    <Compile Include="Formatting\SmartFormatRules.cs" />
+    <Compile Include="Library\SnippetLibrary.cs" />
+    <Compile Include="Linking\AdvancedExportMap.cs" />
+    <Compile Include="Linking\LinkedRangeRegistry.cs" />
+    <Compile Include="Linking\LinkHash.cs" />
+    <Compile Include="Linking\LinkMetadata.cs" />
+    <Compile Include="Linking\LinkMetadataRegistry.cs" />
+    <Compile Include="Modelling\A1.cs" />
+    <Compile Include="Modelling\AutocolorClassifier.cs" />
+    <Compile Include="Modelling\DefinedNameAudit.cs" />
+    <Compile Include="Modelling\FormulaReferences.cs" />
+    <Compile Include="Modelling\FormulaTransform.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\SettingsStore.cs" />
+    <Compile Include="Settings\ShortcutMap.cs" />
+    <Compile Include="Util\ColorUtil.cs" />
+    <Compile Include="Util\Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
