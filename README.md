@@ -98,6 +98,14 @@ already-compiled add-ins, and confirms they load. Requirements: Windows 10/11 64
 desktop **Office 64-bit** (Excel/PowerPoint/Word) + the VSTO Runtime (normally already
 installed with Office). To remove: `Uninstall.cmd`.
 
+> **⚠️ Security note — self-signed certificate.** `Install.cmd` adds the bundled
+> certificate (`UpslideClone.cer`, public key only) to your **Trusted Publishers** and
+> **Root** stores so Office will load the add-ins without a prompt. This is unavoidable for
+> self-signed VSTO add-ins — Windows won't trust them otherwise — and is fine for
+> **internal / known-source** use. For wide distribution to people who don't know you,
+> re-sign the add-ins with a **CA-issued code-signing certificate** instead, so no manual
+> trust step is needed and the publisher is verifiable.
+
 **🛠 Build from source.** Prerequisites: **Visual Studio 2022** with the *Office/SharePoint
 development* + *.NET desktop* workloads (pulls in the .NET 4.8.x targeting pack + VSTO build
 targets). Then just double-click **`installer\Install-Upslide.cmd`** — it auto-creates the
