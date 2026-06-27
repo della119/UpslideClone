@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="OnRibbonLoad">
+  <ribbon>
+    <tabs>
+      <tab id="UpslideTabPpt" label="Upslide">
+        <group id="grpLinks" label="Links">
+          <button id="btnLinkManager" label="Link Manager" size="large"
+                  imageMso="DatabaseLinkTablesManageRelationships" onAction="OnToggleLinkManager"
+                  supertip="Show/hide the Link Manager: every linked object, its source, status and last refresh." />
+          <button id="btnRefreshAll" label="Refresh All" size="large"
+                  imageMso="RefreshAll" onAction="OnRefreshAll"
+                  supertip="Re-render every linked object in this deck from its Excel source." />
+        </group>
+        <group id="grpSizing" label="Sizing Guide">
+          <button id="btnInsertPlaceholder" label="Insert Placeholder" size="large"
+                  imageMso="ShapeRectangle" onAction="OnInsertPlaceholder"
+                  supertip="Drop a tagged placeholder; Advanced Export snaps objects to it for consistent dimensions." />
+        </group>
+
+        <group id="grpAlign" label="Align &amp; Size">
+          <menu id="mnuAlign" label="Smart Align" size="large" imageMso="ObjectsAlignLeftSmart"
+                supertip="Align the selected shapes to their bounding box.">
+            <button id="btnAlignLeft" label="Align Left" imageMso="ObjectsAlignLeft" onAction="OnAlignLeft" />
+            <button id="btnAlignCenterH" label="Align Center" imageMso="ObjectsAlignCenterHorizontal" onAction="OnAlignCenterH" />
+            <button id="btnAlignRight" label="Align Right" imageMso="ObjectsAlignRight" onAction="OnAlignRight" />
+            <button id="btnAlignTop" label="Align Top" imageMso="ObjectsAlignTop" onAction="OnAlignTop" />
+            <button id="btnAlignMiddle" label="Align Middle" imageMso="ObjectsAlignMiddleVertical" onAction="OnAlignMiddle" />
+            <button id="btnAlignBottom" label="Align Bottom" imageMso="ObjectsAlignBottom" onAction="OnAlignBottom" />
+          </menu>
+          <button id="btnDistH" label="Distribute Across" imageMso="AlignDistributeHorizontally" onAction="OnDistributeH"
+                  supertip="Even horizontal gaps between 3+ shapes." />
+          <button id="btnDistV" label="Distribute Down" imageMso="AlignDistributeVertically" onAction="OnDistributeV"
+                  supertip="Even vertical gaps between 3+ shapes." />
+          <button id="btnSameSize" label="Same Size" imageMso="SizeToControlHeightAndWidth" onAction="OnSameSize"
+                  supertip="Resize selected shapes to match the first one." />
+        </group>
+
+        <group id="grpArrange" label="Arrange">
+          <button id="btnBringFront" label="Bring to Front" imageMso="ObjectBringToFront" onAction="OnBringFront" />
+          <button id="btnSendBack" label="Send to Back" imageMso="ObjectSendToBack" onAction="OnSendBack" />
+          <button id="btnGroup" label="Group" imageMso="ObjectsGroup" onAction="OnGroup" />
+          <button id="btnUngroup" label="Ungroup" imageMso="ObjectsUngroup" onAction="OnUngroup" />
+        </group>
+
+        <group id="grpDesign" label="Format &amp; Select">
+          <button id="btnFormatShapes" label="Format Shapes" size="large" imageMso="ShapeStylesGallery" onAction="OnFormatShapes"
+                  supertip="Apply the brand font/colours to selected shapes, text and tables." />
+          <button id="btnSelectSimilar" label="Select Similar" imageMso="SelectMultiObjects" onAction="OnSelectSimilar"
+                  supertip="Select all shapes on the slide with the same type and fill." />
+          <button id="btnSmartPainter" label="Smart Painter" imageMso="FormatPainter" onAction="OnSmartPainter"
+                  supertip="Copy the first shape's formatting onto the rest of the selection." />
+        </group>
+
+        <group id="grpSlides" label="Slides">
+          <button id="btnToc" label="Table of Contents" size="large" imageMso="TableOfContentsGallery" onAction="OnToc"
+                  supertip="Insert a TOC slide built from the slide titles." />
+          <button id="btnSlideCheck" label="Slide Check" size="large" imageMso="ReviewShowMarkup" onAction="OnSlideCheck"
+                  supertip="Scan the deck for off-slide shapes and missing titles before sending." />
+          <button id="btnOutline" label="Outline" size="large" imageMso="ViewOutlineView" onAction="OnOutline"
+                  supertip="Show/hide the Outline pane — slide titles; double-click to jump." />
+        </group>
+
+        <group id="grpContent" label="Content Library">
+          <button id="btnSaveContent" label="Save to Library" size="large" imageMso="SaveSelectionToQuickPartGallery" onAction="OnSaveContent"
+                  supertip="Save the selected shapes as a reusable library item." />
+          <button id="btnInsertContent" label="Insert from Library" size="large" imageMso="QuickPartsInsertGallery" onAction="OnInsertContent"
+                  supertip="Insert a saved item onto the current slide." />
+        </group>
+
+        <group id="grpRefs" label="References">
+          <button id="btnFootnote" label="Footnote" imageMso="InsertFootnote" onAction="OnFootnote"
+                  supertip="Add an auto-numbered footnote to this slide." />
+          <button id="btnXref" label="Cross-reference" imageMso="CrossReferenceInsert" onAction="OnXref"
+                  supertip="Insert a reference to another slide (survives re-ordering)." />
+          <button id="btnXrefRefresh" label="Refresh Refs" imageMso="RefreshAll" onAction="OnXrefRefresh"
+                  supertip="Update all cross-references to current slide numbers/titles." />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
