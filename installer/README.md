@@ -3,7 +3,23 @@
 Per-user install of the three VSTO add-ins (Excel, PowerPoint, Word). No admin
 rights required — everything is under `HKCU` and the CurrentUser certificate stores.
 
-## ⭐ One-click install (recommended) — `Install-Upslide.cmd`
+## 🟢 For non-developers — pre-built release (no Visual Studio)
+Download the latest zip from **[Releases](https://github.com/della119/UpslideClone/releases)**,
+extract it (keep all files together), and double-click **`Install.cmd`**. It trusts the
+bundled certificate, installs the already-compiled add-ins to
+`%LOCALAPPDATA%\Programs\UpslideClone\`, registers them, and confirms they load.
+Requirements: Windows + desktop Office + the VSTO Runtime (normally already installed with
+Office). Uninstall with `Uninstall.cmd`.
+
+The release zip is produced from source with **`installer\Make-Release.ps1`** (bundles the
+compiled binaries + the public signing cert + `Install-Prebuilt.ps1`):
+```powershell
+powershell -ExecutionPolicy Bypass -File installer\Make-Release.ps1   # -> dist\UpslideClone-v1.0.0.zip
+```
+
+---
+
+## ⭐ Build from source (developers) — `Install-Upslide.cmd`
 **Just double-click `installer\Install-Upslide.cmd`.** One script does everything and
 *verifies it worked*:
 

@@ -36,3 +36,7 @@ test-evidence/
 # reverse-engineered spec notes - local only, not for public repo
 UPSLIDE_CLONE_Windows_Requirements.md
 Upslide_Functionality_Summary.md
+
+# release packaging output (published as GitHub Release assets, not committed)
+dist/
+

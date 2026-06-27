@@ -89,21 +89,26 @@ drift. See [TECH_STACK.md](TECH_STACK.md) §3.
 
 ## 4. Quick start
 
-### Prerequisites
-- Windows 10/11 64-bit, **Office 64-bit** (Excel/PowerPoint/Word)
-- **Visual Studio 2022** with the *Office/SharePoint development* + *.NET desktop* workloads
-  (pulls in the .NET 4.8.x targeting pack + VSTO build targets), or just the build tools
-  if you only build.
+### Two ways to install (per-user, no admin)
 
-### Install (per-user, no admin) — recommended: production
+**🟢 Non-developers — no Visual Studio needed.** Download the latest zip from
+**[Releases](https://github.com/della119/UpslideClone/releases)**, extract it, and
+double-click **`Install.cmd`**. It trusts the bundled certificate, installs the
+already-compiled add-ins, and confirms they load. Requirements: Windows 10/11 64-bit +
+desktop **Office 64-bit** (Excel/PowerPoint/Word) + the VSTO Runtime (normally already
+installed with Office). To remove: `Uninstall.cmd`.
+
+**🛠 Build from source.** Prerequisites: **Visual Studio 2022** with the *Office/SharePoint
+development* + *.NET desktop* workloads (pulls in the .NET 4.8.x targeting pack + VSTO build
+targets). Then just double-click **`installer\Install-Upslide.cmd`** — it auto-creates the
+signing cert, builds Release, copies to a stable location, registers, and verifies each
+add-in loads. Equivalent:
 ```powershell
-# Build Release, then install to a stable location
-& "D:\VS2022\MSBuild\Current\Bin\MSBuild.exe" UpslideClone.sln /t:Build /p:Configuration=Release /restore
-powershell -ExecutionPolicy Bypass -File installer\Install-Production.ps1
+powershell -ExecutionPolicy Bypass -File installer\Install-Upslide.ps1
 ```
-Then just **open Excel / PowerPoint / Word normally** — the **Upslide** ribbon tab loads.
-(For active development against `bin\Debug`, see `installer\README.md` for the dev install +
-cold-start launchers.)
+Then **open Excel / PowerPoint / Word normally** — the **Upslide** ribbon tab loads. If it
+ever disappears, double-click `installer\Repair-Upslide.cmd`. See
+[installer/README.md](installer/README.md) for details and the dev (`bin\Debug`) workflow.
 
 ### Run the tests
 ```powershell
