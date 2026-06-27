@@ -1,0 +1,38 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+UpgradeLog*.htm
+_UpgradeReport_Files/
+Backup/
+_Backup/
+
+# Node (Mac Office.js prototype)
+addin/node_modules/
+
+# Dev code-signing certificate (per-machine, regenerate; never commit)
+*.pfx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Proprietary training fixtures — kept local only, never redistributed.
+# Broad patterns so every variant (…_test, …_test2, …) is excluded.
+*Training Guide*.xlsx
+*Training Guide*.pptx
+*Training Guide*.xlsm
+*Training Guide*.ppt
+*Training Guide*.xls
+~$*
+
+# Local test evidence (screenshots), kept local only
+test-evidence/
+
+# reverse-engineered spec notes - local only, not for public repo
+UPSLIDE_CLONE_Windows_Requirements.md
+Upslide_Functionality_Summary.md
