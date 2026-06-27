@@ -2,42 +2,41 @@
  UPSLIDE CLONE — START HERE (WINDOWS)
 ==============================================================================
 
-GOAL: Build the Windows VSTO/C# add-in that replaces Upslide.
-
-STEP 1 — Copy this ENTIRE folder to your Windows PC:
-            D:\G\UpslideClone\
-         Keep ALL of it together — these files matter:
-            - UPSLIDE_CLONE_Windows_Requirements.md   (the full build spec)
-            - Upslide_Functionality_Summary.md         (reverse-engineered internals)
-            - addin\                                    (working Mac prototype = parity oracle)
-            - Training Guide Excel.xlsx        (test fixture)
-            - Training Guide PPT.pptx          (test fixture)
-
-STEP 2 — Install the toolchain (details in spec §7):
-            - Visual Studio 2022 Community
-                workloads: "Office/SharePoint development" + ".NET desktop development"
-            - .NET Framework 4.8 Developer Pack
-            - Microsoft Office desktop (Excel, PowerPoint, Word), 64-bit
-            - Claude Code for Windows
-         VERIFY: VS > New Project shows "Excel VSTO Add-in" (C#). If yes, you're ready.
-
-STEP 3 — Open Claude Code in D:\G\UpslideClone and paste this prompt:
+In-house Windows VSTO add-in suite (Excel / PowerPoint / Word): branded
+formatting, finance charts, and a live Excel<->PowerPoint<->Word link engine.
+A from-scratch C#/.NET reimplementation of the Upslide workflow.
 
 ------------------------------------------------------------------------------
-Read UPSLIDE_CLONE_Windows_Requirements.md and Upslide_Functionality_Summary.md
-in full. We are building the Windows VSTO version per that spec. The Mac
-Office.js prototype in addin\ already implements Smart Format and the Waterfall
-builder — port that proven logic to C# (C# drafts are in Appendix A of the
-spec). Start by scaffolding the Visual Studio solution described in §6, then
-implement Phase W1. Build and debug as you go (F5 sideloads into Excel and
-attaches the debugger). Use the brand training workbook as the test fixture.
-Ask me before any irreversible step.
+JUST WANT TO USE IT
 ------------------------------------------------------------------------------
+  1. Download the latest pre-built release (Releases tab) and unzip it.
+  2. Double-click  Install.cmd  (per-user, no admin rights needed).
+  3. Open Excel / PowerPoint / Word — the "Upslide" ribbon tab is there.
 
-STEP 4 — Build order (spec §9): W0 scaffold → W1 formatting+charts →
-         W2 modelling tools → W3 LINKING ENGINE (the core) → W4 advanced
-         linking+Word → W5 library+polish+installer.
+------------------------------------------------------------------------------
+BUILD FROM SOURCE
+------------------------------------------------------------------------------
+  Requirements:
+    - Windows + 64-bit desktop Office (Excel, PowerPoint, Word)
+    - Visual Studio 2022, workloads:
+        "Office/SharePoint development" + ".NET desktop development"
+    - .NET Framework 4.8.1 Developer Pack
 
-NOTE: The C# in Appendix A was written on Mac and not yet compiled. Exact COM
-Interop signatures get verified on the first Windows build — expected, not a bug.
+  Then:
+    1. git clone https://github.com/della119/UpslideClone
+    2. Double-click  installer\Install-Upslide.cmd
+       It auto-generates a signing cert, builds Release, registers each
+       add-in, and VERIFIES each one actually loads (prints PASS/FAIL per app).
+
+  If the Upslide tab ever disappears: double-click installer\Repair-Upslide.cmd
+
+------------------------------------------------------------------------------
+DOCS
+------------------------------------------------------------------------------
+  README.md ............ business case, features, architecture, quick start
+  USER_GUIDE.md ........ every ribbon button, what it does, how to use it
+  TECH_STACK.md ........ technology + architecture deep-dive
+  TEST_RESULTS.md ...... build matrix + 99 unit/integration tests
+  UAT_PLAN.md .......... step-by-step manual acceptance tests
+  PROJECT_STATUS.md .... phase-by-phase build log
 ==============================================================================
