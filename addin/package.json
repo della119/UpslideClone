@@ -1,0 +1,27 @@
+{
+  "name": "upslide-clone-addin",
+  "version": "0.1.0",
+  "description": "Upslide-style Excel add-in (Phase 1: Smart Format + Waterfall) — cross-platform Office.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "dev-server": "webpack serve --mode development",
+    "start": "office-addin-debugging start manifest.xml desktop",
+    "stop": "office-addin-debugging stop manifest.xml",
+    "validate": "office-addin-manifest validate manifest.xml"
+  },
+  "devDependencies": {
+    "@types/office-js": "^1.0.377",
+    "copy-webpack-plugin": "^12.0.2",
+    "html-webpack-plugin": "^5.6.0",
+    "office-addin-debugging": "^6.0.2",
+    "office-addin-dev-certs": "^2.0.2",
+    "office-addin-manifest": "^2.0.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}

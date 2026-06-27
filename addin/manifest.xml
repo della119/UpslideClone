@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>B47EB6B5-F261-4B2A-B1B3-04014CA0CE37</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Della</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Upslide Clone"/>
+  <Description DefaultValue="Smart Format and Waterfall tools for Excel (Phase 1)."/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="https://localhost:3000/taskpane.html"/>
+  <AppDomains>
+    <AppDomain>https://localhost:3000</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="Commands.Url" lifetime="long"/>
+        </Runtimes>
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="Upslide.Tab">
+              <Group id="Upslide.Format.Group">
+                <Label resid="Group.Format.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="Upslide.SmartFormat">
+                  <Label resid="SmartFormat.Label"/>
+                  <Supertip>
+                    <Title resid="SmartFormat.Label"/>
+                    <Description resid="SmartFormat.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>smartFormatTable</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="Upslide.Charts.Group">
+                <Label resid="Group.Charts.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="Upslide.Waterfall">
+                  <Label resid="Waterfall.Label"/>
+                  <Supertip>
+                    <Title resid="Waterfall.Label"/>
+                    <Description resid="Waterfall.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>buildWaterfall</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="Upslide.Panel.Group">
+                <Label resid="Group.Panel.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="Upslide.OpenPanel">
+                  <Label resid="OpenPanel.Label"/>
+                  <Supertip>
+                    <Title resid="OpenPanel.Label"/>
+                    <Description resid="OpenPanel.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Upslide.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="Tab.Label"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Tab.Label" DefaultValue="Upslide"/>
+        <bt:String id="Group.Format.Label" DefaultValue="Formatting"/>
+        <bt:String id="Group.Charts.Label" DefaultValue="Charts"/>
+        <bt:String id="Group.Panel.Label" DefaultValue="Panel"/>
+        <bt:String id="SmartFormat.Label" DefaultValue="Smart Format"/>
+        <bt:String id="Waterfall.Label" DefaultValue="Waterfall"/>
+        <bt:String id="OpenPanel.Label" DefaultValue="Open Panel"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="SmartFormat.Tip" DefaultValue="Apply branded formatting to the selected table."/>
+        <bt:String id="Waterfall.Tip" DefaultValue="Build a waterfall chart from the selected label/value table."/>
+        <bt:String id="OpenPanel.Tip" DefaultValue="Open the Upslide task pane."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
