@@ -1,7 +1,9 @@
 # UpslideClone — User Guide
 
-A practical, button-by-button guide to the **Upslide** add-in across Excel, PowerPoint and
-Word. For install/build, see the [README](README.md).
+> A practical, button-by-button guide to every **Upslide** feature across Excel, PowerPoint
+> and Word — what each ribbon button does and how to use it.
+
+For install/build, see the [README](README.md).
 
 ## Before you start
 1. Install once: `installer\install.ps1` (no admin needed).
