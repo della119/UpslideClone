@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="OnRibbonLoad">
+  <ribbon>
+    <tabs>
+      <tab id="UpslideTab" label="Upslide">
+
+        <group id="grpFormatting" label="Formatting">
+          <button id="btnSmartFormat" label="Smart Format" size="large"
+                  imageMso="TableStylesGallery" onAction="OnSmartFormat"
+                  screentip="Smart Format (Ctrl+Shift+S)"
+                  supertip="Apply branded formatting to the selected table: header, result rows, number formats, borders." />
+          <button id="btnUndoFormatting" label="Undo Formatting" size="normal"
+                  imageMso="Undo" onAction="OnUndoFormatting"
+                  supertip="Revert the last Smart Format action cell-by-cell." />
+          <button id="btnClearFormatting" label="Clear Formatting" size="normal"
+                  imageMso="ClearFormatsCell" onAction="OnClearFormatting"
+                  screentip="Clear Formatting (Ctrl+Alt+C)" />
+          <menu id="mnuToggles" label="Toggles" size="normal" imageMso="TableStylesGallery">
+            <button id="btnToggleTitle" label="Title formats" onAction="OnToggleTitle" />
+            <button id="btnToggleResult" label="Result formats" onAction="OnToggleResult" />
+            <button id="btnToggleNumber" label="Number formats" onAction="OnToggleNumber" />
+            <button id="btnTogglePercent" label="Percentage formats" onAction="OnTogglePercent" />
+          </menu>
+        </group>
+
+        <group id="grpCharts" label="Charts">
+          <button id="btnWaterfall" label="Waterfall" size="large"
+                  imageMso="ChartTypeColumnInsertGallery" onAction="OnBuildWaterfall"
+                  screentip="Build Waterfall (Ctrl+Shift+B)"
+                  supertip="Build a floating-bar waterfall from a label/value bridge table." />
+          <button id="btnStackedWaterfall" label="Stacked Waterfall" size="large"
+                  imageMso="ChartTypeColumnInsertGallery" onAction="OnBuildStackedWaterfall"
+                  supertip="Build a stacked waterfall from a multi-series (e.g. FR/UK/DE) bridge table." />
+          <button id="btnCagr" label="Display CAGR" size="large"
+                  imageMso="LineInsertGallery" onAction="OnDisplayCagr"
+                  screentip="Display CAGR (Ctrl+Shift+G)"
+                  supertip="Annotate the selected chart with a CAGR arrow between first and last points." />
+        </group>
+
+        <group id="grpModelling" label="Modelling">
+          <button id="btnAutocolor" label="Autocolor" size="large"
+                  imageMso="FontColorPicker" onAction="OnAutocolor"
+                  screentip="Autocolor (Ctrl+Shift+A)"
+                  supertip="Blue = inputs, black = formulas, green = links/external refs." />
+          <button id="btnIferror" label="IFERROR" size="large"
+                  imageMso="FormulaEvaluate" onAction="OnIferror"
+                  screentip="Apply IFERROR (Ctrl+Shift+I)"
+                  supertip="Wrap selected formulas in IFERROR(…,&quot;&quot;)." />
+          <button id="btnFillRight" label="Fast Fill Right" onAction="OnFastFillRight"
+                  screentip="Fast Fill Right (Ctrl+Alt+R)" />
+          <button id="btnFillDown" label="Fast Fill Down" onAction="OnFastFillDown"
+                  screentip="Fast Fill Down (Ctrl+Alt+D)" />
+          <button id="btnCleanPrepare" label="Clean &amp; Prepare" onAction="OnCleanPrepare"
+                  supertip="Remove broken defined names (#REF!) before sharing." />
+          <button id="btnSmartPrint" label="Smart Print" onAction="OnSmartPrint"
+                  screentip="Smart Print (Ctrl+Shift+P)"
+                  supertip="Apply standardized print settings and preview." />
+        </group>
+
+        <group id="grpLibrary" label="Library">
+          <button id="btnSaveLibrary" label="Save to Library" size="large"
+                  imageMso="SaveSelectionToQuickPartGallery" onAction="OnSaveLibrary"
+                  screentip="Excel Library (Ctrl+Shift+Y)"
+                  supertip="Save the selected range as a reusable snippet." />
+          <button id="btnInsertLibrary" label="Insert from Library" size="large"
+                  imageMso="QuickPartsInsertGallery" onAction="OnInsertLibrary"
+                  supertip="Insert a saved snippet at the selection." />
+        </group>
+
+        <group id="grpExport" label="Export">
+          <button id="btnExportPpt" label="Export to PowerPoint" size="large"
+                  imageMso="SlideShowFromCurrent" onAction="OnExportPpt"
+                  screentip="Export to PowerPoint (Ctrl+Shift+E)"
+                  supertip="Paste the selected range into PowerPoint as a LINKED picture, refreshable from this workbook." />
+          <button id="btnExportPptTable" label="Export as Table" size="large"
+                  imageMso="TableInsertDialog" onAction="OnExportPptTable"
+                  supertip="Export the selected range as a native, editable, linked PowerPoint table." />
+          <button id="btnExportWord" label="Export to Word" size="large"
+                  imageMso="ExportWord" onAction="OnExportWord"
+                  screentip="Export to Word (Ctrl+Shift+D)"
+                  supertip="Insert the selected range into Word as a linked picture, refreshable from this workbook." />
+          <button id="btnAdvancedExport" label="Advanced Export" size="large"
+                  imageMso="ExportExcel" onAction="OnAdvancedExport"
+                  screentip="Advanced Export (Ctrl+Alt+A)"
+                  supertip="Batch-export many ranges to many slides from a mapping table (Range / Slide / Type / Placeholder)." />
+          <button id="btnHighlightLinked" label="Highlight Linked" onAction="OnHighlightLinked"
+                  screentip="Highlight linked items (Ctrl+Alt+L)"
+                  supertip="Flag every range in this workbook that has been linked out to a deck." />
+        </group>
+
+        <group id="grpSettings" label="Settings">
+          <button id="btnSettings" label="Settings" size="large" imageMso="FunctionWizard"
+                  onAction="OnSettings" supertip="Edit the branding theme &amp; keyboard shortcuts." />
+        </group>
+
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
